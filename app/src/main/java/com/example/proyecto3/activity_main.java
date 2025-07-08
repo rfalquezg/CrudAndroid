@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class activity_main extends AppCompatActivity {
 
     EditText etNombre, etEmail;
-    Button btnGuardar,btnVerUsuarios;
+    Button btnGuardar, btnVerUsuarios;
     DBHelper dbHelper;
 
     @Override
@@ -49,16 +49,15 @@ public class activity_main extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put("nombre", nombre);
         values.put("email", email);
-        db.insert("usuarios",null,values);
+        db.insert("usuarios", null, values);
         Toast.makeText(this, "Usuario guardado", Toast.LENGTH_SHORT).show();
         etNombre.setText("");
         etEmail.setText("");
     }
-
-
-    //ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-    //    Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-    //    v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-    //    return insets;
-    //});
 }
+
+//ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//    Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//    v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//    return insets;
+//});
